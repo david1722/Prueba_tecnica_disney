@@ -1,6 +1,8 @@
 export class CustomerModel {
-    type: string;
+    type: string; 
     name: string;
-    lastName: string;
+    lastname: string;
     customerId: string;
+    address: string;
+    phoneNumber: string;
 }

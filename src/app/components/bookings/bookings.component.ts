@@ -8,11 +8,21 @@ import { BookingModel } from 'src/app/models/BookingModel';
 })
 export class BookingsComponent implements OnInit {
 
+  
+  token: string;
   bookings: BookingModel [] = [];
 
-  constructor() { }
+  constructor( private booktofly: BooktoflyService ) { }
+
+ 
+
 
   ngOnInit(): void {
+
+    this.booktofly.getToken().subscribe(data => {
+      this.token = data;
+    });
   }
+
 
 }

@@ -1,5 +1,3 @@
-
-
 export class TokenModel {
     agencyId: string;
     agencyKey: string;
