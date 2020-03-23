@@ -1,0 +1,72 @@
+<section class="body">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h3>¿Quiénes Viajan?</h3><br/>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <label>Adultos</label>
+                <input type="number" [(ngModel)]="numberOfAdults" />
+            </div>
+            <div class="col-md-6">
+                <label>Niños</label>
+                <input type="number" [(ngModel)]="numberOfChildren" />
+            </div>
+
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <label>Número de días</label>
+                <input type="number" [(ngModel)]="numberOfDays" />
+            </div>
+            <div class="col-md-6">
+                <label>Fecha ingreso al parque</label>
+                <input type="date" [(ngModel)]="startDate" />
+            </div>
+        </div>
+        <div class="row button mt-5">
+            <div class="col-md-12">
+                <button class="button button-blue" (click)="search() ">
+                    Buscar 
+                </button>
+            </div>
+        </div>
+        <br/>
+    </div>
+</section>
+
+<div class="row" *ngIf="show && plansCards.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No se encontraron resultados.
+        </div>
+    </div>
+</div>
+
+<section class="cards">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let plan of plansCards" class="col-md-4 pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ plan.name }} </h5>
+                        <p class="card-text"> Entrada de <strong> {{ plan.numberOfDays }} </strong> días</p>
+                        <ul>
+                            <li>
+                                <div class="price">Precio final por adulto:</div>
+                                <div class="price2"> {{ plan.totalAdultRate }} </div><small class="text-muted">10 años o más</small>
+                            </li>
+                            <li>
+                                <div class="price">Precio final por niño:</div>
+                                <div class="price2"> {{ plan.totalChildRate }} </div><small class="text-muted">3 a 9 años</small>
+                            </li>
+                        </ul><a class="button-plan button-blue" [routerLink]="['/bookings']">Elegir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
