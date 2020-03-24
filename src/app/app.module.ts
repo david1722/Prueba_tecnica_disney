@@ -17,7 +17,6 @@ import { BooktoflyService } from './services/booktofly.service';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PlansComponent } from './components/plans/plans.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 
 
@@ -29,7 +28,6 @@ import { BookingsComponent } from './components/bookings/bookings.component';
     AppComponent,
     BodyComponent,
     HeaderComponent,
-    PlansComponent,
     BookingsComponent,
     
   ],
